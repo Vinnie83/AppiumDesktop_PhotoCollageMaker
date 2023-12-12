@@ -71,7 +71,16 @@ namespace PhotoCollageMaker
             saveButton.Click();
 
             var yesButton = driver.FindElementByName("Yes");
-            yesButton.Click();   
+            yesButton.Click();
+
+            string directoryPath = "D:\\Documents\\Pictures\\Photo Collage Maker & Montage Creator";
+
+            string filePattern = "mycreation*";
+
+            bool fileExists = Directory.GetFiles(directoryPath, filePattern).Any();
+
+            Assert.That(fileExists,Is.True );
+
         }
     }
 }
